@@ -60,6 +60,8 @@
                     <option>Vermelho</option>
                 </select>
             </p>
+            <p>Lazy: {{busca}}</p>
+            <p><input type="text" v-model.lazy="busca"></p>
         </div>
 
         <script type="text/javascript">
@@ -76,7 +78,8 @@ var app = new Vue({
         notificacoes: [],
         sexo: 'M',
         ano: '',
-        cores: null
+        cores: null,
+        busca: ''
     }
 });
         </script>
