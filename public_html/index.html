@@ -41,6 +41,25 @@
                 <input type="radio" id="feminino" value="F" v-model="sexo">
                 <label for="feminino">Feminino</label>
             </p>
+
+            <p>Select {{ano}}</p>
+            <p>                
+                <select v-model="ano">
+                    <option disabled>Escolha o ano</option>
+                    <option value="2017">Ano 2017</option>
+                    <option value="2018">Ano 2018</option>
+                    <option value="2019">Ano 2019</option>
+                </select>
+            </p>                
+            <p>Multiple Select {{cores}}</p>
+            <p>                
+                <select multiple="true" v-model="cores">
+                    <option disabled>Escolha as cores</option>
+                    <option>Azul</option>
+                    <option>Verde</option>
+                    <option>Vermelho</option>
+                </select>
+            </p>
         </div>
 
         <script type="text/javascript">
@@ -55,7 +74,9 @@ var app = new Vue({
         textarea: '',
         termos: false,
         notificacoes: [],
-        sexo: 'M'
+        sexo: 'M',
+        ano: '',
+        cores: null
     }
 });
         </script>
