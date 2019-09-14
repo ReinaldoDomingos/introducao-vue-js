@@ -25,7 +25,10 @@
                 <p>Total (computed): {{totalValorComputed | trataValor}}</p>
                 <p>contaMethods: {{contaMethods}}</p>
                 <p>contaComputed: {{contaComputed}}</p>
-                <p></p>
+                <p>
+                    <input type="text" v-model="nome" placeholder="Nome">
+                </p>
+                <p>Alterações: {{contaAlteracoes}}</p>
             </ul>
         </div>
 
@@ -61,7 +64,9 @@ el: "#app",
                 ],
                 html: '<a href="#">Esse é um link</a>',
                 contaMethods: 0,
-                contaComputed: 0
+                contaComputed: 0,
+                nome: '',
+                contaAlteracoes: 0
         },
         filters: {
         trataValor: function (valor) {
@@ -70,7 +75,7 @@ el: "#app",
         },
         methods: {
         totalValorMetodo: function () {
-        this.contaMethods++;
+//        this.contaMethods++;
         var total = 0;
         for (item of this.registros){
         total += item.valor;
@@ -87,8 +92,13 @@ el: "#app",
         }
         return total;
         }
+        },
+        watch:{
+        nome: function (valor){
+        this.contaAlteracoes++;
+        this.nome = valor.toUpperCase()
         }
-
+        }
 });
         </script>
     </body>
