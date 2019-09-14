@@ -15,6 +15,7 @@
             
             <p v-once>{{meuTitulo}}</p>
             <p v-html="html"></p>
+            <p>{{25.988475235 | trataValor}}</p>
         </div>
 
         <script type="text/javascript">
@@ -50,6 +51,11 @@
                         {titulo: "Título 3", descricao: "Descrição 3", link: "link3"}
                     ],
                     html:'<a href="#">Esse é um link</a>'
+                },
+                filters:{
+                    trataValor: function (valor){
+                        return ('R$' + (valor).toFixed(2)).replace('.',',');
+                    }
                 }
             });
         </script>
