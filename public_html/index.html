@@ -62,26 +62,30 @@
             </p>
             <p>Lazy: {{busca}}</p>
             <p><input type="text" v-model.lazy="busca"></p>
+
+            <p>Number: {{idade}} - tipo: {{typeof idade}} </p>
+            <p><input type="number" v-model.number="idade"></p>
         </div>
 
         <script type="text/javascript">
-            Vue.component('gui-titulo', {
-                props: ['titulo'],
-                template: '<h2>{{titulo}}</h2>'
-            });
-            var app = new Vue({
-                el: "#app",
-                data: {
-                    texto: '',
-                    textarea: '',
-                    termos: false,
-                    notificacoes: [],
-                    sexo: 'M',
-                    ano: '',
-                    cores: null,
-                    busca: ''
-                }
-            });
+Vue.component('gui-titulo', {
+    props: ['titulo'],
+    template: '<h2>{{titulo}}</h2>'
+});
+var app = new Vue({
+    el: "#app",
+    data: {
+        texto: '',
+        textarea: '',
+        termos: false,
+        notificacoes: [],
+        sexo: 'M',
+        ano: '',
+        cores: null,
+        busca: '',
+        idade: 45
+    }
+});
         </script>
     </body>
 </html>
